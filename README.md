@@ -9,5 +9,7 @@ secp256k1n = 1157920892373161954235709850086879078528375642790749043826051631415
 
 Pub key genated via: ECDSAPUBKEY(pr ∈ B32) ≡ pu ∈ B64
 
+ECDSAPUBKEY and other important functions are defined by Johnson et. al, 2001 (https://web.archive.org/web/20170921160141/http://cs.ucsb.edu/~koc/ccs130h/notes/ecdsa-cert.pdf)
+
 
 
