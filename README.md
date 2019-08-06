@@ -12,5 +12,6 @@ Pub key genated via: ECDSAPUBKEY(pr ∈ B32) ≡ pu ∈ B64
 
 ECDSAPUBKEY and other important functions are defined by Johnson et. al, 2001 (https://web.archive.org/web/20170921160141/http://cs.ucsb.edu/~koc/ccs130h/notes/ecdsa-cert.pdf)
 
+Taking the ECDSAPUBKEY(pr), the value is hashed with Keccak. Then, the right most 160-bits are taken and used as the address. 
 
 
