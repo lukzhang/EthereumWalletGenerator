@@ -1,7 +1,7 @@
 # EthereumWalletGenerator
 Selects private key from random int and uses it to generate public key and wallet. Subsequent plans to add verification and signing. Some code borrowed from Geth's Secp256 elliptic curve.
 
-#According to Ethereum Yellow Paper
+# According to Ethereum Yellow Paper
 
 random integer selected from [1, secp256k1n − 1].
 
