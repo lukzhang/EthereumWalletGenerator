@@ -6,6 +6,8 @@ import (
 	"crypto/elliptic"
 	"crypto/rand"
 	"crypto/sha256"
+	"encoding/binary"
+	"encoding/hex"
 	"fmt"
 	"io"
 	"log"
@@ -38,10 +40,9 @@ type Key struct {
 }
 
 func main() {
-	fmt.Println("hello world")
 
 	var r io.Reader
-	r = strings.NewReader("1")
+	r = strings.NewReader("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364140") //hex version of secp256k1 prime MINUS 1 (-1)as that is the max allowed
 
 	tmp, err := newKey(r)
 
@@ -50,10 +51,23 @@ func main() {
 	}
 	fmt.Println(tmp.Address)
 
+	//Get only pub key?
+
+	myString := string(tmp.Address[:])
+	fmt.Println(myString)
+
+	hx := hex.EncodeToString([]byte(myString))
+	fmt.Println(hx)
+
+	data := binary.BigEndian.Uint32(tmp.Address[:])
+	fmt.Println(data)
+
+	fmt.Println("Private key ", tmp.PrivateKey)
+
+	//***Bitocoin type wallet making***
 	// tmp := MakeWallet()
 	// fmt.Println(tmp.PrivateKey)
 	// fmt.Println(tmp.PublicKey)
-
 	//tmp2 := ValidateAddress(tmp.PublicKey)
 }
 
